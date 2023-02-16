@@ -85,7 +85,59 @@ namespace ft
 			//operator: to const
 			operator random_access_iterator<const T> () const { return (random_access_iterator<const T>(this->_ptr)); }
 
-		}
+		};
+
+	template<typename T>
+	bool operator==(const ft::random_access_iterator<T> left, const ft::random_access_iterator<T> right) {
+		return (left.base() == right.base());
+	}
+	template<typename T1, typename T2>
+	bool operator==(const ft::random_access_iterator<T1> left, const ft::random_access_iterator<T2> right) {
+		return (left.base() == right.base());
+	}
+	template<typename T>
+	bool operator!=(const ft::random_access_iterator<T> left, const ft::random_access_iterator<T> right) {
+		return (left.base() != right.base());
+	}
+	template<typename T1, typename T2>
+	bool operator!=(const ft::random_access_iterator<T1> left, const ft::random_access_iterator<T2> right) {
+		return (left.base() != right.base());
+	}
+	template<typename T>
+	bool operator>=(const ft::random_access_iterator<T> left, const ft::random_access_iterator<T> right) {
+		return (left.base() >= right.base());
+	}
+	template<typename T1, typename T2>
+	bool operator>=(const ft::random_access_iterator<T1> left, const ft::random_access_iterator<T2> right) {
+		return (left.base() >= right.base());
+	}
+	template<typename T>
+	bool operator<=(const ft::random_access_iterator<T> left, const ft::random_access_iterator<T> right) {
+		return (left.base() <= right.base());
+	}
+	template<typename T1, typename T2>
+	bool operator<=(const ft::random_access_iterator<T1> left, const ft::random_access_iterator<T2> right) {
+		return (left.base() <= right.base());
+	}
+	template<typename T>
+	bool operator>(const ft::random_access_iterator<T> left, const ft::random_access_iterator<T> right) {
+		return (left.base() > right.base());
+	}
+	template<typename T1, typename T2>
+	bool operator>(const ft::random_access_iterator<T1> left, const ft::random_access_iterator<T2> right) {
+		return (left.base() > right.base());
+	template<typename T>
+	bool operator-(const ft::random_access_iterator<T> left, const ft::random_access_iterator<T> right) {
+		return (left.base() - right.base());
+	}
+	template<typename T1,typename T2>
+	bool operator-(const ft::random_access_iterator<T1> left, const ft::random_access_iterator<T2> right) {
+		return (left.base() - right.base());
+	}
+	template<typename T>
+	bool operator+(const ft::random_access_iterator<T>::difference_type n, const ft::random_access_iterator<T> &right) {
+		return (&(*right) + n);
+	}
 }
 
 #endif //FT_CONTAINER_RANDOM_ACCESS_ITERATOR_HPP
